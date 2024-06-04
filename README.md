@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Recrutary
 
-## Getting Started
+## About the Project
 
-First, run the development server:
+Recrutary is a recruitment platform that allows you to manage users and their information. This project uses Next.js with TypeScript for the frontend and backend, integration with Firebase for authentication, and MongoDB for data storage.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Structure
+
+### Frontend
+
+The frontend code is primarily located in the `/src/app` folder. Here you will find:
+
+- **Pages**: Next.js pages, including `dashboard`, `login`, and the home page.
+- **Components**: Reusable components such as forms, navbar, and protected components.
+- **Context**: Authentication context to manage user state.
+- **Locales**: Translation files for multi-language support.
+
+### Backend
+
+The backend code is distributed in the following folders:
+
+- **/pages/api**: API endpoints handling backend logic.
+- **Middleware**: Middlewares for request processing.
+- **Repositories**: Classes and interfaces for interacting with the MongoDB database.
+- **Modules**: Model definitions and DTOs used in the project.
+
+## Setup and Initialization
+
+### Clone the Repository
+
+```
+git clone https://github.com/Recrutary/nextjs-application.git
+cd nextjs-application
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Environment Configuration
 
-## Learn More
+Copy the `.env.local-dist` file to `.env.local` and fill in the environment variables as needed:
 
-To learn more about Next.js, take a look at the following resources:
+```
+cp .env.local-dist .env.local
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+MONGODB_URI=mongodb://localhost:27017/recrutary
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=recrutary-frb.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=recrutary-frb
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=recrutary-frb.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=874710423193
+NEXT_PUBLIC_FIREBASE_APP_ID=1:874710423193:web:c720baa0f1f55d6dd2ca08
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-7B42KG6CTW
+FIREBASE_PROJECT_ID=recrutary-frb
+FIREBASE_CLIENT_EMAIL=firebase-adminsdk-tw58c@recrutary-frb.iam.gserviceaccount.com
+FIREBASE_PRIVATE_KEY="ask-a-leader-about-it"
+```
 
-## Deploy on Vercel
+## Frontend Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For frontend development, focus on the `/src/app` directory. This includes creating and managing components, pages, and handling the UI.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Key Areas:
+
+- **Components**: Create and manage reusable UI components in the `/components` directory.
+- **Pages**: Add and manage new pages within the `/[locale]` directory.
+- **Context**: Manage authentication state within the `auth.context.tsx`.
+- **Localization**: Add new translations in the `/locales` directory.
+
+## Backend Development
+
+For backend development, focus on the following areas:
+
+### Key Areas:
+
+- **API**: Implement and manage API routes in the `/pages/api` directory.
+- **Middleware**: Manage request processing in the `/middleware` directory.
+- **Repositories**: Handle data operations in the `/repositories` directory.
+- **Modules**: Define and manage models and DTOs in the `/modules` directory.
+
+By following these guidelines, you can effectively contribute to both frontend and backend development in the Recrutary project.
