@@ -1,10 +1,10 @@
-// user.form.tsx
 "use client";
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { IUser } from '@/modules';
 import { useAuth } from '@/app/context/auth.context';
+import { useTranslations } from 'next-intl';
 
 const UserForm = () => {
   const { authUser, getToken } = useAuth();
@@ -12,6 +12,7 @@ const UserForm = () => {
     name: '',
     email: '',
   });
+  const t = useTranslations('translation');
 
   useEffect(() => {
     if (authUser) {
@@ -30,16 +31,16 @@ const UserForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const token = await getToken();
-    console.log(token)
+    console.log(token);
     try {
       const response = await axios.post('/api/users', user, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log('User created/updated:', response.data);
+      console.log(t('user_created_updated'), response.data);
     } catch (error) {
-      console.error('Error creating/updating user:', error);
+      console.error(t('error'), error);
     }
   };
 
@@ -47,7 +48,7 @@ const UserForm = () => {
     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 shadow-md rounded">
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-          Name
+          {t('form.name')}
         </label>
         <input
           type="text"
@@ -61,7 +62,7 @@ const UserForm = () => {
       </div>
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-          Email
+          {t('form.email')}
         </label>
         <input
           type="email"
@@ -77,7 +78,7 @@ const UserForm = () => {
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
-        Save
+        {t('form.save')}
       </button>
     </form>
   );

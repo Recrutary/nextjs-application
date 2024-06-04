@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "welcome": "Bem-vindo ao Recrutary",
+    "description": "Sua plataforma de recrutamento definitiva",
+    "dashboard": "Painel",
+    "logout": "Sair",
+    "login": "Entrar",
+    "signInWithGoogle": "Entrar com Google",
+    "welcomeMessage": "Bem-vindo, {name}",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "save": "Salvar",
+      "user_created_updated": "Usuário criado/atualizado",
+      "error": "Erro ao criar/atualizar usuário"
+    },
+    "navbar": {
+      "dashboard": "Painel",
+      "logout": "Sair",
+      "login": "Entrar"
+    }
+  }
+}
