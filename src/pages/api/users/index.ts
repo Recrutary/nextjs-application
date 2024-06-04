@@ -3,10 +3,12 @@ import { createRouter } from 'next-connect';
 import connectToDatabase from '../../../lib/mongodb';
 import userRepository from '../../../repositories/user.repository';
 import bodyParser from '../../../middleware/body.parser';
+import verifyIdToken from '../../../middleware/verify.id.token';
 
 const router = createRouter<NextApiRequest, NextApiResponse>();
 
 router.use(bodyParser);
+router.use(verifyIdToken);
 
 /**
  * @swagger
@@ -41,8 +43,18 @@ router.get(async (req, res) => {
 
 router.post(async (req, res) => {
   await connectToDatabase();
-  const user = await userRepository.create(req.body);
-  res.status(201).json(user);
+  const { user } = req as any;
+  const existingUser = await userRepository.findByUid(user.uid);
+
+  if (existingUser) {
+    // Atualiza o usuário existente
+    const updatedUser = await userRepository.update(existingUser.id, req.body);
+    res.status(200).json(updatedUser);
+  } else {
+    // Cria um novo usuário
+    const newUser = await userRepository.create({ ...req.body, uid: user.uid });
+    res.status(201).json(newUser);
+  }
 });
 
 export default router.handler({

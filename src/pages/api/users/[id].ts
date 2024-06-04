@@ -3,10 +3,12 @@ import { createRouter } from 'next-connect';
 import connectToDatabase from '../../../lib/mongodb';
 import userRepository from '../../../repositories/user.repository';
 import bodyParser from '../../../middleware/body.parser';
+import verifyIdToken from '../../../middleware/verify.id.token';
 
 const router = createRouter<NextApiRequest, NextApiResponse>();
 
 router.use(bodyParser);
+router.use(verifyIdToken);
 
 /**
  * @swagger

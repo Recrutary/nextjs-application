@@ -1,7 +1,6 @@
 import { IUserRepository, UserResponseDto } from "@/modules";
 import User, { IUserModel } from "@/modules/user/user";
 
-
 class UserRepository implements IUserRepository {
   async findAll(): Promise<UserResponseDto[]> {
     const aUsers = await User.find({});
@@ -13,7 +12,12 @@ class UserRepository implements IUserRepository {
     return user ? this.mapUserResponse(user) : null;
   }
 
-  async create(user: IUserModel): Promise<UserResponseDto> {
+  async findByUid(uid: string): Promise<UserResponseDto | null> {
+    const user = await User.findOne({ uid });
+    return user ? this.mapUserResponse(user) : null;
+  }
+
+  async create(user: Partial<IUserModel>): Promise<UserResponseDto> {
     const newUser = new User(user);
     const oUser = await newUser.save();
     return this.mapUserResponse(oUser);
