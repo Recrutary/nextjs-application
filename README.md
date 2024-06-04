@@ -63,6 +63,21 @@ FIREBASE_CLIENT_EMAIL=firebase-adminsdk-tw58c@recrutary-frb.iam.gserviceaccount.
 FIREBASE_PRIVATE_KEY="ask-a-leader-about-it"
 ```
 
+### Starting Development
+
+We have two ways to you start you development, one that will start also a mongodb into your docker, and one without mongodb starting, that is in case that you already have any kind of mongodb installed or want use some cloud connectiong string:
+
+To start with mongodb on your Docker
+```
+npm run dev:db
+```
+
+To start standalone without database
+```
+npm run dev
+```
+
+
 ## Frontend Development
 
 For frontend development, focus on the `/src/app` directory. This includes creating and managing components, pages, and handling the UI.
