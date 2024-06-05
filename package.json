@@ -8,7 +8,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "cp -r ./node_modules/swagger-ui-dist/* ./public/swagger-ui",
     "docker:start": "docker-compose up -d",
     "docker:stop": "docker-compose down"
   },
