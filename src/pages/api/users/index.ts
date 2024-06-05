@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createRouter } from 'next-connect';
 import connectToDatabase from '../../../lib/mongodb';
-import userRepository from '../../../repositories/user.repository';
+import userRepository from '../../../modules/user/repositories/user.repository';
 import bodyParser from '../../../middleware/body.parser';
 import verifyIdToken from '../../../middleware/verify.id.token';
 
@@ -14,11 +14,31 @@ router.use(verifyIdToken);
  * @swagger
  * /api/users:
  *   get:
+ *     security:
+ *       - bearerAuth: []
  *     description: Get all users
  *     responses:
  *       200:
  *         description: Success
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                   name:
+ *                     type: string
+ *                   email:
+ *                     type: string
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
  *   post:
+ *     security:
+ *       - bearerAuth: []
  *     description: Create a new user
  *     requestBody:
  *       required: true
@@ -34,6 +54,20 @@ router.use(verifyIdToken);
  *     responses:
  *       201:
  *         description: Created
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                 name:
+ *                   type: string
+ *                 email:
+ *                   type: string
+ *                 createdAt:
+ *                   type: string
+ *                   format: date-time
  */
 router.get(async (req, res) => {
   await connectToDatabase();

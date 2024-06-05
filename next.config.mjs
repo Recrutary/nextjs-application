@@ -13,7 +13,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api-docs',
+        source: '/swagger',
         destination: '/swagger-ui.html',
       },
     ];

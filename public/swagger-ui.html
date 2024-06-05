@@ -15,7 +15,7 @@
     <div id="swagger-ui"></div>
     <script>
       window.onload = () => {
-        window.ui = SwaggerUIBundle({
+        const ui = SwaggerUIBundle({
           url: '/api/swagger',
           dom_id: '#swagger-ui',
           presets: [
@@ -24,6 +24,19 @@
           ],
           layout: "StandaloneLayout"
         });
+
+        // Preauthorize the API with a token if provided
+        ui.initOAuth({
+          clientId: "your-client-id",
+          clientSecret: "your-client-secret",
+          realm: "your-realms",
+          appName: "Swagger UI",
+          scopeSeparator: " ",
+          additionalQueryStringParams: {},
+          useBasicAuthenticationWithAccessCodeGrant: false
+        });
+
+        window.ui = ui;
       };
     </script>
   </body>
