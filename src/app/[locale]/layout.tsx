@@ -2,8 +2,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Inter } from 'next/font/google';
 import { AuthUserProvider } from '../context/auth.context';
-import './globals.css';
+import { PageProvider } from '../context/page.context';
 import Navbar from '../components/navbar';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,9 +26,11 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <AuthUserProvider>
-          <Navbar />
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <PageProvider>
+              <Navbar locale={locale} />
+              {children}
+            </PageProvider>
           </NextIntlClientProvider>
         </AuthUserProvider>
       </body>

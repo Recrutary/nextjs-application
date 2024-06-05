@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from 'react';
+import { usePage } from '@/app/context/page.context';
 import ProtectedRoute from "@/app/components/protected.route";
 import { useAuth } from "@/app/context/auth.context";
 import UserForm from "@/app/components/forms/user.form";
@@ -8,6 +10,11 @@ import { useTranslations } from "next-intl";
 const Dashboard = () => {
   const { authUser } = useAuth();
   const t = useTranslations('translation');
+  const { setPage } = usePage();
+
+  useEffect(() => {
+    setPage('dashboard');
+  }, [setPage]);
 
   return (
     <ProtectedRoute>
