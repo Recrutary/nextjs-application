@@ -1,16 +1,17 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
-import { useAuth } from '../context/auth.context';
-import { usePage } from '../context/page.context';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Fragment } from 'react';
-import LanguageSelector from './language.selector';
+import Link from "next/link";
+import { useRouter, usePathname, notFound } from "next/navigation";
+import { useAuth } from "../context/auth.context";
+import { usePage } from "../context/page.context";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Fragment } from "react";
+import LanguageSelector from "./language.selector";
+import { locales } from "@/i18n";
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 const Navbar = ({ locale }: { locale: string }) => {
@@ -19,12 +20,16 @@ const Navbar = ({ locale }: { locale: string }) => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const links = authUser ? [
-    { name: 'Dashboard', href: `/${locale}/dashboard`, id: 'dashboard' },
-  ] : [];
+  const links = authUser
+    ? [{ name: "Dashboard", href: `/${locale}/dashboard`, id: "dashboard" }]
+    : [];
+
+  if (!locales.includes(locale)) {
+    notFound();
+  }
 
   const changeLanguage = (locale: string) => {
-    const newPathname = pathname ? `/${locale}${pathname.slice(3)}` : '';
+    const newPathname = pathname ? `/${locale}${pathname.slice(3)}` : "";
     router.push(newPathname);
   };
 
@@ -42,11 +47,17 @@ const Navbar = ({ locale }: { locale: string }) => {
                 </div>
                 {authUser && (
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    {links.map(link => (
-                      <Link key={link.id} href={link.href} className={classNames(
-                        page === link.id ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
-                        'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium'
-                      )}>
+                    {links.map((link) => (
+                      <Link
+                        key={link.id}
+                        href={link.href}
+                        className={classNames(
+                          page === link.id
+                            ? "border-indigo-500 text-gray-900"
+                            : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                          "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
+                        )}
+                      >
                         {link.name}
                       </Link>
                     ))}
@@ -54,13 +65,20 @@ const Navbar = ({ locale }: { locale: string }) => {
                 )}
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:items-center gap-3 align-middle items-center">
-                <LanguageSelector locale={locale} changeLanguage={changeLanguage} />
+                <LanguageSelector
+                  locale={locale}
+                  changeLanguage={changeLanguage}
+                />
                 {authUser ? (
                   <Menu as="div" className="relative ml-3">
                     <div>
                       <Menu.Button className="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         <span className="sr-only">Open user menu</span>
-                        <img className="h-8 w-8 rounded-full" src={authUser.imageUrl || '/default-avatar.png'} alt="" />
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src={authUser.imageUrl || "/default-avatar.png"}
+                          alt=""
+                        />
                       </Menu.Button>
                     </div>
                     <Transition
@@ -77,7 +95,10 @@ const Navbar = ({ locale }: { locale: string }) => {
                           {({ active }) => (
                             <button
                               onClick={signOut}
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
                             >
                               Logout
                             </button>
@@ -110,19 +131,22 @@ const Navbar = ({ locale }: { locale: string }) => {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
-              {authUser && links.map(link => (
-                <Disclosure.Button
-                  key={link.id}
-                  as="a"
-                  href={link.href}
-                  className={classNames(
-                    page === link.id ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700',
-                    'block border-l-4 py-2 pl-3 pr-4 text-base font-medium'
-                  )}
-                >
-                  {link.name}
-                </Disclosure.Button>
-              ))}
+              {authUser &&
+                links.map((link) => (
+                  <Disclosure.Button
+                    key={link.id}
+                    as="a"
+                    href={link.href}
+                    className={classNames(
+                      page === link.id
+                        ? "bg-indigo-50 border-indigo-500 text-indigo-700"
+                        : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700",
+                      "block border-l-4 py-2 pl-3 pr-4 text-base font-medium"
+                    )}
+                  >
+                    {link.name}
+                  </Disclosure.Button>
+                ))}
             </div>
           </Disclosure.Panel>
         </>
