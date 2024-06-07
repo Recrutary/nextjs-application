@@ -19,5 +19,11 @@
       "logout": "Logout",
       "login": "Login"
     }
+  },
+  "404": {
+    "alert": "The requested page does not exist.",
+    "button": "Return",
+    "footer": "If your language is not already in our application,",
+    "footer_link": "create the translation"
   }
 }

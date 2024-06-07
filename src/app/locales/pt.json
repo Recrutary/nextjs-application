@@ -19,5 +19,11 @@
       "logout": "Sair",
       "login": "Entrar"
     }
+  },
+  "404": {
+    "alert": "Á pagina solicitada não existe.",
+    "button": "Voltar",
+    "footer": "Caso a sua linguagem ainda não esteja em nossa aplicação,",
+    "footer_link": "crie a tradução"
   }
 }
