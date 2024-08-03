@@ -27,7 +27,7 @@ const LoginPage = () => {
   }, [authUser, router, pathname]);
 
   return (
-    <main className={`${Styles.main} flex items-center min-h-screen`}>
+    <main className={`${Styles.main} flex items-center justify-center min-h-screen`}>
       <div className="w-full sm:w-8/12 bg-white p-6 rounded-lg shadow-lg mx-4 sm:mx-0">
         <div className="flex justify-center sm:justify-start mb-4">
           <Image src="/images/uget-azul.png" alt='Uget' width={200} height={200} className="sm:w-300 sm:h-300" />
