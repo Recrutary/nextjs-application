@@ -27,19 +27,21 @@ const LoginPage = () => {
   }, [authUser, router, pathname]);
 
   return (
-    <main className={`${Styles.main} flex items-center justify-center`}>
-      <div className="w-8/12 bg-white p-6 rounded-lg shadow-lg">
-        <Image src="/images/uget-azul.png" alt='Uget' width={300} height={300} />
+    <main className={`${Styles.main} flex items-center min-h-screen`}>
+      <div className="w-full sm:w-8/12 bg-white p-6 rounded-lg shadow-lg mx-4 sm:mx-0">
+        <div className="flex justify-center sm:justify-start mb-4">
+          <Image src="/images/uget-azul.png" alt='Uget' width={200} height={200} className="sm:w-300 sm:h-300" />
+        </div>
 
-        <section className='flex flex-col items-end pr-4'>
-          <section className="w-96 flex flex-col gap-4">
-            <div className='flex items-center justify-center gap-4'>
+        <section className='flex flex-col items-center sm:items-end'>
+          <section className="w-full sm:w-96 flex flex-col gap-4">
+            <div className='flex items-center justify-center sm:justify-center gap-4 mb-4'>
               <button className={Styles.btnSignUp} onClick={loginWithGoogle}><FcGoogle /></button>
               <button className={Styles.btnSignUp}><ImLinkedin2 className={Styles.linkedin} /></button>
               <button className={Styles.btnSignUp}><RiMicrosoftLoopFill className="text-red-600" /></button>
             </div>
 
-            <form className='flex flex-col gap-4 items-center' method='post'>
+            <form className='flex flex-col gap-4 w-full items-center sm:items-center' method='post'>
               <input
                 placeholder={t('loginpage.inputEmail')}
                 type="text"
@@ -58,9 +60,9 @@ const LoginPage = () => {
                 className={`${Styles.input} shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
               />
 
-              <button className={Styles.btnNext}><GoArrowRight /></button>
+              <button className={`${Styles.btnNext}`}><GoArrowRight /></button>
 
-              <p style={{ color: '#191b68', fontWeight: 'bold' }}>
+              <p className="text-center sm:text-left" style={{ color: '#191b68', fontWeight: 'bold' }}>
                 {t('loginpage.register1')} <a href='' className='underline'>{t('loginpage.registerLink')}</a> {t('loginpage.register2')}
               </p>
             </form>
