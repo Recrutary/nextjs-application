@@ -4,11 +4,15 @@ import Link from "next/link";
 import { useRouter, usePathname, notFound } from "next/navigation";
 import { useAuth } from "../context/auth.context";
 import { usePage } from "../context/page.context";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 import LanguageSelector from "./language.selector";
 import { locales } from "@/i18n";
+
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import Styles from "../../../styles/navbar.module.css";
+import { SlArrowDown } from "react-icons/sl";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -34,17 +38,12 @@ const Navbar = ({ locale }: { locale: string }) => {
   };
 
   return (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav" className={Styles.navbar_background}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 justify-between">
               <div className="flex">
-                <div className="flex flex-shrink-0 items-center">
-                  <Link href={`/${locale}`}>
-                    <span className="text-xl font-bold">Recrutary</span>
-                  </Link>
-                </div>
                 {authUser && (
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                     {links.map((link) => (
@@ -108,12 +107,21 @@ const Navbar = ({ locale }: { locale: string }) => {
                     </Transition>
                   </Menu>
                 ) : (
-                  <button
-                    onClick={loginWithGoogle}
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-10 flex items-center"
-                  >
-                    Login
-                  </button>
+                  <Menu>
+                  <MenuButton className={Styles.login}>LOGIN <SlArrowDown /></MenuButton>
+                  <MenuItems anchor="bottom">
+                    <MenuItem>
+                      <a className="block data-[focus]:bg-blue-100">
+                        CANDIDATOS
+                      </a>
+                    </MenuItem>
+                    <MenuItem>
+                      <a className="block data-[focus]:bg-blue-100">
+                        EMPRESAS
+                      </a>
+                    </MenuItem>
+                  </MenuItems>
+                </Menu>
                 )}
               </div>
               <div className="-mr-2 flex items-center sm:hidden">

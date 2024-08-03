@@ -18,6 +18,14 @@
       "dashboard": "Painel",
       "logout": "Sair",
       "login": "Entrar"
+    },
+    "loginpage":{
+      "login": "LOGIN",
+      "inputEmail": "Login com e-mail ou CPF (CNPJ)",
+      "inputPassword": "Senha",
+      "register1": "Não tem conta? Clique",
+      "registerLink": "aqui",
+      "register2": "para registrar"
     }
   },
   "404": {

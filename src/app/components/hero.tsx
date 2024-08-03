@@ -1,3 +1,5 @@
+//página feita inicialmente para teste e criação da base da plataforma
+
 "use client";  // This line indicates that this file is a client component
 import {useTranslations} from 'next-intl';
 
