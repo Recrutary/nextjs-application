@@ -31,6 +31,9 @@
     "dashboardCandidate":{
       "here": "Here you can track your updates and look for more opportunities.",
       "candidatura": "Auto-application?"
+    },
+    "search":{
+      "search_oportunity":"Find your next opportunity"
     }
   },
   "tooltips": {

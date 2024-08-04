@@ -19,8 +19,7 @@ const DashboardCandidate = () => {
 
   return (
     <ProtectedRoute>
-      <main className="bg-[#f9f9f9] flex items-center justify-center min-h-screen">
-        <section className="relative w-full sm:w-8/12 bg-white p-6 rounded-lg shadow-lg mx-4 sm:mx-0">
+      <>
           <h1 className="text-[#191b68] mb-4 font-bold text-[2.5rem]">
             {t('welcomeMessage', { name: authUser?.name || 'User' })}
           </h1>
@@ -63,8 +62,7 @@ const DashboardCandidate = () => {
             </Switch>
             {t('no')}
           </span>
-        </section>
-      </main>
+      </>
     </ProtectedRoute>
   );
 };

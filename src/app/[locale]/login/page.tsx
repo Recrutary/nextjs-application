@@ -4,9 +4,9 @@ import LoginPage from "@/app/components/loginpage/login.page";
 
 const Login = () => {
   return (
-    <div>
+    <main className="bg-[#f9f9f9] flex items-center justify-center min-h-screen">
       <LoginPage/>
-    </div>
+    </main>
   );
 };
 

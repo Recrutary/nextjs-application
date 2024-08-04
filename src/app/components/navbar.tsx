@@ -112,7 +112,7 @@ const Navbar = ({ locale }: { locale: string }) => {
                   <MenuButton className={Styles.login}>LOGIN <SlArrowDown /></MenuButton>
                   <MenuItems anchor="bottom">
                     <MenuItem>
-                      <a className="block data-[focus]:bg-blue-100" href="/login">
+                      <a className="block data-[focus]:bg-blue-100" href="/search">
                         CANDIDATOS
                       </a>
                     </MenuItem>

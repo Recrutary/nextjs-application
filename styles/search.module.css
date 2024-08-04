@@ -1,0 +1,14 @@
+.input{
+    border: 2px solid #191b68;
+    border-radius: 20px;
+    padding: 0.2rem;
+    box-shadow: 0 0.8rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btnNext{
+    background-color: #191b68;
+    color: #ffffff;
+    padding: 1rem;
+    width: 3rem;
+    border-radius: 50%;
+  }

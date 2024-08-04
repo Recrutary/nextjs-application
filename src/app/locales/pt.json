@@ -31,6 +31,9 @@
     "dashboardCandidate":{
       "here": "Aqui você pode acompanhar suas atualizações e procurar mais oportunidades.",
       "candidatura": "Candidatura automática?"
+    },
+    "search":{
+      "search_oportunity":"Encontre sua próxima oportunidade"
     }
   },
   "404": {
