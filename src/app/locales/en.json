@@ -2,11 +2,13 @@
   "translation": {
     "welcome": "Welcome to Recrutary",
     "description": "Your ultimate recruitment platform",
-    "dashboard": "Dashboard",
     "logout": "Logout",
     "login": "Login",
     "signInWithGoogle": "Sign in with Google",
-    "welcomeMessage": "Welcome, {name}",
+    "welcomeMessage": "Welcome, {name}!",
+    "engineer": "Engineer",
+    "yes": "Yes",
+    "no": "No",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -15,7 +17,6 @@
       "error": "Error creating/updating user"
     },
     "navbar": {
-      "dashboard": "Dashboard",
       "logout": "Logout",
       "login": "Login"
     },
@@ -26,12 +27,13 @@
       "register1": "Don't have an account? Click",
       "registerLink": "here",
       "register2":"to register."
+    },
+    "dashboardCandidate":{
+      "here": "Here you can track your updates and look for more opportunities.",
+      "candidatura": "Auto-application?"
     }
   },
-  "404": {
-    "alert": "The requested page does not exist.",
-    "button": "Return",
-    "footer": "If your language is not already in our application,",
-    "footer_link": "create the translation"
+  "tooltips": {
+    "autoApplication": "🧐 Searching for a job shouldn’t be a job. Therefore, if you have a match rate of more than 75%, we will automatically apply for you. Learn more by clicking here."
   }
 }

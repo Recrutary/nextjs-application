@@ -13,6 +13,7 @@ import { locales } from "@/i18n";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import Styles from "../../../styles/navbar.module.css";
 import { SlArrowDown } from "react-icons/sl";
+import { link } from "fs";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -111,7 +112,7 @@ const Navbar = ({ locale }: { locale: string }) => {
                   <MenuButton className={Styles.login}>LOGIN <SlArrowDown /></MenuButton>
                   <MenuItems anchor="bottom">
                     <MenuItem>
-                      <a className="block data-[focus]:bg-blue-100">
+                      <a className="block data-[focus]:bg-blue-100" href="/login">
                         CANDIDATOS
                       </a>
                     </MenuItem>

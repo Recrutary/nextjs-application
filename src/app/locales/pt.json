@@ -2,11 +2,13 @@
   "translation": {
     "welcome": "Bem-vindo ao Recrutary",
     "description": "Sua plataforma de recrutamento definitiva",
-    "dashboard": "Painel",
     "logout": "Sair",
     "login": "Entrar",
     "signInWithGoogle": "Entrar com Google",
-    "welcomeMessage": "Bem-vindo, {name}",
+    "welcomeMessage": "Bem-vindo (a), {name}!",
+    "engineer": "Engenheiro",
+    "yes": "Sim",
+    "no": "Não",
     "form": {
       "name": "Nome",
       "email": "Email",
@@ -15,7 +17,6 @@
       "error": "Erro ao criar/atualizar usuário"
     },
     "navbar": {
-      "dashboard": "Painel",
       "logout": "Sair",
       "login": "Entrar"
     },
@@ -26,6 +27,10 @@
       "register1": "Não tem conta? Clique",
       "registerLink": "aqui",
       "register2": "para registrar"
+    },
+    "dashboardCandidate":{
+      "here": "Aqui você pode acompanhar suas atualizações e procurar mais oportunidades.",
+      "candidatura": "Candidatura automática?"
     }
   },
   "404": {
@@ -33,5 +38,8 @@
     "button": "Voltar",
     "footer": "Caso a sua linguagem ainda não esteja em nossa aplicação,",
     "footer_link": "crie a tradução"
+  },
+  "tooltips": {
+    "autoApplication": "🧐 Procurar um trabalho não deveria ser um trabalho. Por isso, se você possuir uma aderência maior que 75%, nós te inscrevemos automaticamente. Saiba mais clicando aqui."
   }
 }
