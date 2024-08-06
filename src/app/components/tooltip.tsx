@@ -1,12 +1,7 @@
 "use client";
 
 import React, { FC } from 'react';
-
-interface TooltipProps {
-  text: string;
-  isVisible: boolean;
-  tooltipRef: React.RefObject<HTMLDivElement>;
-}
+import { TooltipProps } from "../../modules/user/interfaces/tooltip.interface"; //interface
 
 const Tooltip: FC<TooltipProps> = ({ text, isVisible, tooltipRef }) => {
   return (

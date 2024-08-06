@@ -37,12 +37,14 @@ const DashboardCandidate = () => {
         <div className="relative inline-block ml-6">
           <p className="text-[#191b68] font-bold flex items-center gap-2">
             {t('dashboardCandidate.candidatura')}
+            
+            {/*tooltip*/}
             <span className="relative"
-              onMouseEnter={() => setTooltipVisible(true)}
+              onMouseEnter={() => setTooltipVisible(true)} //altera a visibilidade da tooltip
               onMouseLeave={() => setTooltipVisible(false)}
             >
               <FaQuestionCircle className="text-[#191b68]" />
-              <Tooltip
+              <Tooltip //tooltip chamada, com o texto a ser exibido passado pelo props TEXT
                 text={tr('autoApplication')}
                 isVisible={isTooltipVisible}
                 tooltipRef={tooltipRef}

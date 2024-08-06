@@ -34,6 +34,37 @@
     },
     "search":{
       "search_oportunity":"Encontre sua próxima oportunidade"
+    },
+    "register":{
+      "title1": "O primeiro passo é",
+      "title2":"se cadastrar.",
+      "text1":"Cadastre-se utilizando sua conta Google, LinkedIn",
+      "text2":"office ou preencha o formulário ao lado.",
+      "label_typeUser":"Vamos entender melhor sua necessidade:",
+      "radiobutton1": "Sou candidato",
+      "radiobutton2": "Sou empresa",
+      "companyForm":{
+        "companytitle1":"Gestão de talentos.",
+        "companytitle2":"Inteligente de verdade.",
+        "companytext1":"Ganhe 30 dias de utilização gratuita no primeiro cadastro.",
+        "talk":"Vamos conversar?",
+        "insertName":"Qual seu nome e sobrenome?",
+        "inputEmail": "Login com e-mail ou CPF (CNPJ)",
+        "insertWhatsapp": "Qual seu Whatsapp com código de área?",
+        "insertEmail": "Insira seu e-mail corporativo",
+        "insertCompanyName": "Qual o nome da sua empresa?"
+      },
+      "candidateForm":{
+        "labelTypeName": "Gostaria de utilizar o seu:",
+        "civilName": "Nome civil",
+        "socialName": "Nome social",
+        "labelName": "Nome completo: *",
+        "labelBirthday": "Data de nascimento: *",
+        "labelPopularEmail": "E-mail que mais usa: *",
+        "insertName": "Login com e-mail ou CPF (CNPJ)",
+        "labelPassword": "Escolha sua senha: *",
+        "confirmPassword":"Confirme sua senha"
+      }
     }
   },
   "404": {

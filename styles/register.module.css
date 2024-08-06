@@ -1,0 +1,15 @@
+.btnNext{
+    background-color: #191b68;
+    color: #ffffff;
+    padding: 0.5rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .input{
+    border: 2px solid #191b68;
+    border-radius: 20px;
+    box-shadow: 0 0.8rem 0.5rem rgba(0, 0, 0, 0.2);
+}

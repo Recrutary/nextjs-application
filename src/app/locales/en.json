@@ -22,7 +22,7 @@
     },
     "loginpage": {
       "login": "LOGIN",
-      "inputEmail": "Login with email or CPF (CNPJ)",
+      "inputEmail": "Login with e-mail or CPF (CNPJ)",
       "inputPassword": "Password",
       "register1": "Don't have an account? Click",
       "registerLink": "here",
@@ -34,6 +34,36 @@
     },
     "search":{
       "search_oportunity":"Find your next opportunity"
+    },
+  "register": {
+      "title1": "The first step is",
+      "title2": "to register.",
+      "text1": "Register using your Google, LinkedIn",
+      "text2": "or office account, or fill out the form next to it.",
+      "label_typeUser": "Let's better understand your needs:",
+      "radiobutton1": "I am a candidate",
+      "radiobutton2": "I am a company",
+      "companyForm": {
+        "companytitle1": "Talent Management.",
+        "companytitle2": "Truly Intelligent.",
+        "companytext1": "Get 30 days of free usage on your first registration.",
+        "talk":"Let's talk?",
+        "insertName":"What's your first and last name?",
+        "insertWhatsapp": "What is your WhatsApp with area code?",
+        "insertEmail": "Enter your corporate email",
+        "insertCompanyName": "What is your company name?"
+      },
+      "candidateForm":{
+        "labelTypeName": "Would you like to use your:",
+        "civilName": "Civil name",
+        "socialName": "Social name",
+        "labelName": "Full name: *",
+        "labelBirthday": "Date of birth: *",
+        "labelPopularEmail": "Email you use the most: *",
+        "insertName": "Login with e-mail or CPF (CNPJ)",
+        "labelPassword": "Choose a password: *",
+        "confirmPassword":"Confirm password"
+      }
     }
   },
   "tooltips": {
